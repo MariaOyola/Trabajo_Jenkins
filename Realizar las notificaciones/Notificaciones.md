@@ -44,3 +44,60 @@
 ------------------------------------------
 # Ahora se van a enviar notificaciones (Microsoft Teams)
 
+- Intalamos el Office 365 Connector / Power Automate workflows para usar Jenkis en microsoft teams. 
+
+![alt text](image-13.png)
+
+## NOTICIA DE ULTIMA HORA 
+
+Durante la implementación de las notificaciones automáticas en Jenkins, inicialmente intenté integrar Microsoft Teams como plataforma de mensajería para recibir alertas de los builds del pipeline CI/CD.
+
+El objetivo era que Jenkins enviara notificaciones automáticas cuando el proyecto compilara correctamente, fallara o quedara en estado inestable.
+
+Sin embargo, durante el proceso surgieron varias limitaciones técnicas relacionadas con Microsoft Teams. La principal dificultad fue que la versión utilizada correspondía a Microsoft Teams Personal o Communities, la cual no incluye soporte completo para funcionalidades empresariales como Incoming Webhooks, Connectors o Workflows avanzados.
+
+Además, muchas de las integraciones de Jenkins con Teams actualmente requieren cuentas Microsoft 365 empresariales o institucionales, ya que Microsoft ha migrado parte de sus sistemas de integración hacia Power Automate y servicios corporativos.
+
+Debido a estas restricciones, la generación del webhook necesario para Jenkins no pudo realizarse correctamente en el entorno disponible.
+
+Por esta razón, se decidió implementar Telegram como alternativa de notificaciones automáticas, ya que ofrece una integración mucho más sencilla mediante bots y APIs HTTP. Con Telegram fue posible configurar:
+
+* Envío automático de mensajes.
+* Notificaciones de éxito, error e inestabilidad.
+* Integración directa con Jenkins usando curl.
+* Comunicación en tiempo real al dispositivo móvil.
+
+Finalmente, el sistema quedó funcionando correctamente utilizando Jenkins + Telegram + Discord + correo electrónico como mecanismos de monitoreo y notificación del pipeline CI/CD.
+
+
+----------------
+
+# Ahora se van a enviar notificaciones (Microsoft Teams)
+
+![alt text](image-14.png)
+
+- se crea user y nombre para telegram
+
+8890540061:AAFFBM8o4ClBZtGacqdcALJJreNdXneiOj4 
+![alt text](image-15.png)
+![alt text](image-17.png)
+
+- miramos el el Chat ID
+![alt text](image-18.png)
+
+- Ahora vamos a probar el envío
+![alt text](image-19.png)
+
+- Si esto funciona, telegram me emvia un mensaje 
+![alt text](image-20.png)
+
+- despues de eso ya puedo configurar mi Jenkinsfile.
+
+- Me salio error por que lo configure mal 
+![alt text](image-21.png)
+
+- listo ya se corrigio 
+![alt text](image-22.png)
+
+- ya tengo el mensaje de respuesta 
+![alt text](image-23.png)
