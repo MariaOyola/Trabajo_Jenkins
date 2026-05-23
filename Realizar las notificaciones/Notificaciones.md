@@ -101,3 +101,29 @@ Finalmente, el sistema quedó funcionando correctamente utilizando Jenkins + Tel
 
 - ya tengo el mensaje de respuesta 
 ![alt text](image-23.png)
+
+----------------------------------
+
+# Sección 8 — Webhooks de GitHub con Jenkins
+
+1.  Consigue la URL pública de Jenkins
+El problema con Jenkins en Docker es que corre en localhost:8080 — GitHub no puede llegar a esa URL porque es local. Necesitamos exponerla al internet.
+Usamos ngrok (gratis y rápido):
+
+- se Configura el Webhook en GitHub
+![alt text](image-24.png)
+
+- en  Api → Configurar → Triggers → marca:
+![alt text](image-25.png)
+
+-  Bamos a realizar un commit 
+![alt text](image-26.png)
+
+- sin necesidad de ejecutar ya me muestra el error 
+![alt text](image-27.png)
+
+- aqui se muestra como se ejecuta el jenkis automatico con el Webhooks 
+
+<video width="600" controls>
+    <source src="./jenkis.mp4" type="video/mp4">
+</video>
